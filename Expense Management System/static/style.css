@@ -1,0 +1,87 @@
+body {
+    background-image: url(images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    width: 100%;
+    min-width: 100%;
+    min-height:100vh ;
+}
+
+.jumbotron {
+    background-image: url(images/jumbo.jpg);
+    cursor: default;
+    box-shadow: 0px 0px 10px black;
+    background-position: top;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+}
+
+#balance {
+    background-color: goldenrod;
+    box-shadow: 0px 0px 10px black;
+    cursor: default;
+    width: fit-content;
+    margin: auto;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    height: fit-content;
+    text-align: center;
+    font-size: 3rem;
+    padding: 0.5rem;
+}
+
+.transaction {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#credit {
+    width: 50%;
+}
+
+#credititems {
+    width: 99%;
+    margin: auto;
+}
+
+#debit {
+    width: 50%;
+}
+
+#debititems {
+    width: 99%;
+    margin: auto;
+}
+
+.transaction div h1 {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0px 10px black;
+}
+
+.transaction div h1:hover {
+    cursor: default;
+}
+
+.toast {
+    max-width: 100%;
+}
+
+#add {
+    width: 5rem;
+}
+
+#deduct {
+    width: 5rem;
+}
+
+.green{
+    background-color: rgba(170, 250, 230, 0.7);
+}
+.red{
+    background-color: rgba(247, 173, 189, 0.9);
+}

@@ -1,0 +1,12 @@
+.transaction{
+    flex-direction: column;
+}
+#credit {
+    width: 100%;
+}
+#debit {
+    width: 100%;
+}
+#balance{
+    font-size: 2rem;
+}

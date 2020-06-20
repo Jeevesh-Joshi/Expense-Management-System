@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/style.css">
+  <link rel="stylesheet" media="screen and (max-width: 770px)" href="static/responsive.css">
+  <link rel="icon" href="static/images/icon2.png" type="image/gif" sizes="16x16">
+
+  <title>Expense Management System</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark justify-content-center" style="background-color:rgb(0, 0, 0);">
+    <a class="navbar-brand px-2 my-1" style="background-color:rgb(223, 77, 52); border-radius: 0.3rem;">Expense Management
+      System</a>
+    <button style="background-color:rgb(223, 77, 52);" class="navbar-toggler mt-1" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link" href="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="jumbotron my-2 py-4 mb-4 text-center">
+      <img style="width: 10rem; " src="static/images/icon1.png" alt="">
+      <h1 class="display-4 font-weight-bold">Welcome!</h1>
+      <p class="lead font-weight-bold">This is a simple Expense Management System.</p>
+      <hr class="my-1 mx-0 " style="border: solid 0.1px rgb(0, 0, 0);">
+      <p class="font-weight-bold" >Manage your daily expenses here.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div id="balance">
+      Balance : &#8377 0.00
+    </div>
+    <div class="container" id="alert"></div>
+    <div class="transaction my-3">
+      <div id="credit">
+        <h1 class="my-3 p-2 green">Credit</h1>
+        <div class="card container mb-2 green" style="width: 99%;">
+          <div class="card-body p-3 mx-0" style="margin: 0 auto; width: fit-content;">
+            <input id="creditpurpose" class="my-2" type="text" placeholder="Purpose">
+            <input id="creditamount" class="my-1" type="number" placeholder="Amount Value">
+            <button id="add" class="btn btn-success my-2">Add</button>
+          </div>
+        </div>
+        <div id="credititems">
+
+        </div>
+      </div>
+
+      <div id="debit">
+        <h1 class="my-3 p-2 red">Debit</h1>
+        <div class="card container mb-2 red" style="width: 99%;">
+          <div class="card-body p-3 mx-0" style="margin: 0 auto; width: fit-content;">
+            <input id="debitpurpose" class="my-2" type="text" placeholder="Purpose">
+            <input id="debitamount" class="my-1" type="number" placeholder="Amount Value">
+            <button id="deduct" class="btn btn-danger my-2">Deduct</button>
+          </div>
+        </div>
+        <div id="debititems">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="static/index.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
