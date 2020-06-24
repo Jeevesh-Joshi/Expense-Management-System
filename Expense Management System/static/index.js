@@ -5,11 +5,19 @@ let credit = document.getElementById('credititems');
 let balance = document.getElementById('balance');
 let debit = document.getElementById('debititems');
 let add = document.getElementById('add');
+let empty = document.getElementById('empty');
 showCreditItems();
 showDebitItems();
 
 // Listening Add event
-
+function emptycall() {
+  if (creditValue == 0 && debitValue == 0) {
+    empty.innerHTML = `<h4>Nothing to show</h4>`;
+  }
+  else {
+    empty.innerHTML = ''
+  }
+}
 add.addEventListener('click', function () {
   let utc = new Date().toDateString();
   let creditpurpose = document.getElementById('creditpurpose');
@@ -29,7 +37,7 @@ add.addEventListener('click', function () {
   }
   else {
     let alert = document.getElementById('alert');
-    alert.innerHTML = `<div class="alert alert-danger alert-dismissible fade show my-2" role="alert">
+    alert.innerHTML = `<div class="alert alert-success alert-dismissible fade show my-2" role="alert">
         <strong>Invalid/Insufficient Input </strong> You should check in on some of those fields below in Credit.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -60,7 +68,7 @@ deduct.addEventListener('click', function () {
   }
   else {
     let alert = document.getElementById('alert');
-    alert.innerHTML = `<div class="alert alert-primary alert-dismissible fade show my-2" role="alert">
+    alert.innerHTML = `<div class="alert alert-danger alert-dismissible fade show my-2" role="alert">
         <strong>Invalid/Insufficient Input </strong> You should check in on some of those fields below in Debit.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -101,7 +109,7 @@ function showCreditItems() {
   wallet = parseFloat(wallet.toFixed(2));
   credit.innerHTML = html;
   balance.innerHTML = `Balance : &#8377 ${wallet}`;
-
+  emptycall();
 }
 
 // show debititems
@@ -136,6 +144,7 @@ function showDebitItems() {
   wallet = parseFloat(wallet.toFixed(2));
   debit.innerHTML = html;
   balance.innerHTML = `Balance : &#8377 ${wallet}`;
+  emptycall();
 }
 
 // delete CreditItem
@@ -157,3 +166,21 @@ function deleteDebitItem(index) {
   localStorage.setItem("debitList", JSON.stringify(debitsObj));
   showDebitItems();
 }
+
+// credit sum 
+let cb = document.getElementById("cb")
+cb.addEventListener('mouseover', function () {
+  cb.innerHTML = `&#8377 ${creditValue}`;
+})
+cb.addEventListener('mouseout', function () {
+  cb.innerHTML = "Credit";
+})
+
+// debit sum 
+let db = document.getElementById("db")
+db.addEventListener('mouseover', function () {
+  db.innerHTML = `&#8377 ${Math.abs(debitValue)}`;
+})
+db.addEventListener('mouseout', function () {
+  db.innerHTML = "Debit";
+})
