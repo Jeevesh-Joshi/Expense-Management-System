@@ -56,14 +56,13 @@ body {
 }
 
 .transaction div h1 {
+
     text-align: center;
-    width: fit-content;
+    min-width: 9rem;
+    max-width: fit-content;
     margin: auto;
     border-radius: 0.3rem;
     box-shadow: 0px 0px 10px black;
-}
-
-.transaction div h1:hover {
     cursor: default;
 }
 
@@ -80,8 +79,8 @@ body {
 }
 
 .green{
-    background-color: rgba(170, 250, 230, 0.7);
+    background-color: rgba(170, 250, 226, 0.7);
 }
 .red{
-    background-color: rgba(247, 173, 189, 0.9);
+    background-color: rgba(248, 130, 156, 0.822);
 }
