@@ -19,7 +19,8 @@ function emptycall() {
   }
 }
 add.addEventListener('click', function () {
-  let utc = new Date().toDateString();
+  let date = new Date().toDateString();
+  let time = new Date().toLocaleTimeString();
   let creditpurpose = document.getElementById('creditpurpose');
   let creditamount = document.getElementById('creditamount');
   creditpurpose.value = creditpurpose.value.replace(creditpurpose.value[0], creditpurpose.value.toUpperCase()[0]);
@@ -27,7 +28,8 @@ add.addEventListener('click', function () {
     let creditObj = {
       purpose: creditpurpose.value,
       amount: creditamount.value,
-      time: utc,
+      date: date,
+      time: time,
     };
     creditsObj.push(creditObj);
     creditamount.value = "";
@@ -50,7 +52,8 @@ add.addEventListener('click', function () {
 
 let deduct = document.getElementById('deduct');
 deduct.addEventListener('click', function () {
-  let utc = new Date().toDateString();
+  let date = new Date().toDateString();
+  let time = new Date().toLocaleTimeString();
   let debitpurpose = document.getElementById('debitpurpose');
   let debitamount = document.getElementById('debitamount');
   debitpurpose.value = debitpurpose.value.replace(debitpurpose.value[0], debitpurpose.value.toUpperCase()[0]);
@@ -58,7 +61,8 @@ deduct.addEventListener('click', function () {
     let debitObj = {
       purpose: debitpurpose.value,
       amount: debitamount.value,
-      time: utc,
+      date: date,
+      time: time,
     };
     debitsObj.push(debitObj);
     debitamount.value = "";
@@ -92,7 +96,7 @@ function showCreditItems() {
       html += `<div id="toast${index}" class="toast show my-2 green" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header ">
       <strong class="mr-auto">&#8377  ${element.amount}</strong>
-      <small class="text-muted">${element.time}</small>
+      <small class="text-muted">${element.time} | ${element.date}</small>
       <button id="${index}" type="button" onclick = "deleteCreditItem(this.id)" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -127,7 +131,7 @@ function showDebitItems() {
       html += `<div id="toast${index}" class="toast show my-2 red">
     <div class="toast-header ">
       <strong class="mr-auto">&#8377  ${element.amount}</strong>
-      <small class="text-muted">${element.time}</small>
+      <small class="text-muted">${element.time} | ${element.date}</small>
       <button id="${index}" type="button" onclick = "deleteDebitItem(this.id)"  class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
